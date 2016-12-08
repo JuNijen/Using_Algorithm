@@ -17,14 +17,20 @@ public class RandomArrows
 	//Random된 배열을 Return한다.
 	public char RandomArr()
 	{
-		return _RandomArr();
+		return _RandomArr(Random());
 	}
 	
 	
 	//charArr에 랜덤한 값을 넣어준다.
-	private char _RandomArr()
-	{
-		return RandomChar(Random());
+	private char _RandomArr(int randomNum)
+	{		
+		char result = 'Y';
+		result = checkNull(randomNum);
+	
+		while(result == 'Y')
+			checkNull(Random());
+
+		return result;
 	}
 	
 	//Random한 int값을 반환한다.
@@ -33,18 +39,7 @@ public class RandomArrows
 		Random random = new Random();
 		return random.nextInt(100) * random.nextInt(100);
 	}
-	
-	//받아 온 random값으로 Char을 생성 해 준다.
-	private char RandomChar(int randomNum)
-	{
-		char result = 'Y';
-		result = checkNull(randomNum);
-		
-		while(result == 'Y')
-			checkNull(Random());
 
-		return result;
-	}
 	//result가 Y인지 확인한다.
 	private char checkNull(int _randomNum)
 	{
@@ -52,13 +47,13 @@ public class RandomArrows
 		
 		switch(_randomNum % 4)
 		{
-		case 1:
+		case 0:
 			result = up;
-		case 2:
+		case 1:
 			result = down;
-		case 3:
+		case 2:
 			result = left;
-		case 4:
+		case 3:
 			result = right;
 		}
 		return result;
