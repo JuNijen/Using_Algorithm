@@ -37,7 +37,7 @@ public class RandomArrows
 	private int Random()
 	{
 		Random random = new Random();
-		return random.nextInt(100) * random.nextInt(100);
+		return random.nextInt(100) * random.nextInt(7);
 	}
 
 	//result가 Y인지 확인한다.

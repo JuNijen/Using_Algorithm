@@ -10,34 +10,38 @@ public class ActivityMain
 		int maxArray = 10;
 		char[] mainCharArr = new char[10];
     	char mArrow;
-    	
 
         System.out.println("Activity Main Started");
     	
+        //First Init
 		for(int re = 0; re < maxArray; re++)
 		{
 			mainCharArr[re] = gameFunc.InitArr();
-			System.out.println(re+".CharArr = "+ mainCharArr[re]);
 		}
-        System.out.println("FIN Init Func");
-		
-    	gameFunc.DebugArr(mainCharArr);
 
-        
-    	
+    	gameFunc.DebugArr(mainCharArr);
+        System.out.println("- FIN Init Func");
+
+    	gameFunc.clearConcole(20);
         Scanner scanner = new Scanner(System.in);        
         System.out.println("PressArrows");
+    	gameFunc.clearConcole(10);
 
+        
         mArrow = scanner.next().charAt(0);
         
         
         while(mArrow != '.')
         {
         	gameFunc.KeyInput(mArrow);
+           	gameFunc.clearConcole(10);
+
         	mArrow = scanner.next().charAt(0);
+           	gameFunc.clearConcole(10);
         }
-    	gameFunc.clearConcole(10);
+    	gameFunc.clearConcole(20);
     	System.out.println("Thank you");
+    	gameFunc.clearConcole(10);
 
         
         scanner.close();    
