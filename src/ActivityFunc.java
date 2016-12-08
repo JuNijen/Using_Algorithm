@@ -23,5 +23,14 @@ public class ActivityFunc {
 	{
 		randomArr.PrintArr(_charArr);
 	}
-	
+	public void PrintEnding()
+	{
+		String EndingText_1 = "Thank you";
+		String EndingText_2 = "made by @juS_Nijen";
+
+    	clearConcole(20);
+    	System.out.println(EndingText_1);
+    	System.out.println(EndingText_2);
+    	clearConcole(10);
+	}
 }

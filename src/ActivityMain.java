@@ -12,6 +12,7 @@ public class ActivityMain
     	char mArrow;
 
         System.out.println("Activity Main Started");
+        System.out.println("When you check, Plz set console screen to 15");
     	
         //First Init
 		for(int re = 0; re < maxArray; re++)
@@ -39,10 +40,8 @@ public class ActivityMain
         	mArrow = scanner.next().charAt(0);
            	gameFunc.clearConcole(10);
         }
-    	gameFunc.clearConcole(20);
-    	System.out.println("Thank you");
-    	gameFunc.clearConcole(10);
 
+        gameFunc.PrintEnding();
         
         scanner.close();    
     }
