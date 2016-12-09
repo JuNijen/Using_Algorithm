@@ -1,5 +1,9 @@
 public class InputKeycode
 {
+	
+	private char up = 'w', down = 's',
+      		     left = 'a', right = 'd'; 
+	
 	//private 메서드에 접근하기 위한 함수.
 	public void pKeyInput(char keyInput)
     {
@@ -10,8 +14,6 @@ public class InputKeycode
     {
 //    	char up = 38, down = 39,
 //    		 left = 37, right = 40;
-    	char up = 'w', down = 's',
-       		 left = 'a', right = 'd';
     	
         if (keyInput == up)
         	_keyUp();
@@ -48,12 +50,27 @@ public class InputKeycode
     }
     
     //값에 따른 방향키를 출력
-    private void PrintArrow(char arrowKey)
+    public void PrintArrow(char arrowKey)
     {
-    	
+    	if (arrowKey == up)
+    	{
+        	System.out.println("↑ ");
+        }
+        else if (arrowKey == down)
+        {
+        	System.out.println("↓ ");
+        }
+        else if (arrowKey == left)
+        {
+        	System.out.println("← ");
+        }
+        else if (arrowKey == right)
+        {
+        	System.out.println("→ ");
+        }
     }
     //일치하는지 체크
-    private bool IsCorrect(char arrowKey)
+    private boolean IsCorrect(char arrowKey)
     {
     	return true;
     }
