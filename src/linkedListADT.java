@@ -1,5 +1,6 @@
 //import linkedListADT.Node;
-public class linkedListADT {
+public class linkedListADT
+{
 	private Node nodeFirst;
     private int nodeIndex;
     
@@ -24,17 +25,18 @@ public class linkedListADT {
     }
     
     // index 위치의 노드 데이터를 반환한다.
-    public Object get(int index)
+    public Object getNode(int index)
     {
-        return getNode(index).data;
+        return _getNode(index).data;
     }
     
     // index 위치의 노드를 반환한다.
-    private Node getNode(int index)
+    private Node _getNode(int index)
     {
         if(index < 0 || index >= nodeIndex)
         {
-            throw new IndexOutOfBoundsException("Index : " + index + ", Size : " + nodeIndex);
+            throw new IndexOutOfBoundsException
+            		("Index : " + index + ", Size : " + nodeIndex);
         }
         
         Node node = nodeFirst.nextNode;
@@ -47,9 +49,9 @@ public class linkedListADT {
     }
     
     // 첫번째 노드의 데이터를 반환한다.
-    public Object getFirst()
+    public Object getNodeIndexFirst()
     {
-        return get(0);
+        return getNode(0);
     }
     
     // 해당 데이터의 노드 위치 index를 반환한다.
@@ -78,7 +80,7 @@ public class linkedListADT {
     }
     
     // data를 리스트의 첫번째에 삽입한다.
-    public void addFirst(Object data)
+    public void addDataFirst(Object data)
     {
         Node newNode = new Node(data);
         newNode.nextNode = nodeFirst.nextNode;
@@ -87,14 +89,14 @@ public class linkedListADT {
     }
     
     // index 위치에 data를 삽입한다.
-    public void add(int index, Object data)
+    public void addData(int index, Object data)
     { 
         if(index==0)
         {
-            addFirst(data);
+            addDataFirst(data);
             return;
         }
-        Node previous = getNode(index-1);
+        Node previous = _getNode(index-1);
         Node next = previous.nextNode;
         
         Node newNode = new Node(data);
@@ -106,9 +108,8 @@ public class linkedListADT {
     // 리스트의 마지막에 data 를 삽입한다.
     public void addLast(Object data)
     {
-        add(nodeIndex, data);
+        addData(nodeIndex, data);
     }
-    // 리스트의 마지막에 data를 삽입한다.
     public void add(Object data)
     {
         addLast(data);
@@ -117,13 +118,13 @@ public class linkedListADT {
     // 첫번째 노드를 제거하고 데이터를 반환한다.
     public Object removeFirst()
     {
-        Node firstNode = getNode(0);
+        Node firstNode = _getNode(0);
         firstNode.nextNode = firstNode.nextNode;
         nodeIndex--;
         return firstNode.data;
     }
     
-    // index 위치의 노드를 제거하고 데이터를 반환한다.
+    // index 위치의 노드를 제거, 데이터를 반환
     public Object remove(int index)
     {
         if(index<0 || index>=nodeIndex)
@@ -135,7 +136,7 @@ public class linkedListADT {
             return removeFirst();
         }
         
-        Node previous = getNode(index-1);
+        Node previous = _getNode(index-1);
         Node removeNode = previous.nextNode;
         Node next = removeNode.nextNode;
         previous.nextNode = next;
@@ -145,7 +146,7 @@ public class linkedListADT {
     }
     
     // 리스트에서 data를 가진 노드를 제거하고 제거여부를 반환한다.
-    public boolean remove(Object data)
+    public boolean removeData(Object data)
     {
         int nodeIndex = getNodeIndex(data);
         
@@ -167,7 +168,7 @@ public class linkedListADT {
     }
     
     // 리스트의 크기를 반환한다.
-    public int size()
+    public int getSize()
     {
         return nodeIndex;
     }

@@ -47,4 +47,14 @@ public class InputKeycode
     	System.out.println("VK_RIGHT");
     }
     
+    //값에 따른 방향키를 출력
+    private void PrintArrow(char arrowKey)
+    {
+    	
+    }
+    //일치하는지 체크
+    private bool IsCorrect(char arrowKey)
+    {
+    	return true;
+    }
 }
